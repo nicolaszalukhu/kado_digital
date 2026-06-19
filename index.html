@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kado Untuk Kamu ❤️</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+}
+
+#gift{
+    font-size:120px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+#gift:hover{
+    transform:scale(1.1);
+}
+
+#message{
+    display:none;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+h1{
+    font-size:40px;
+}
+
+p{
+    font-size:20px;
+    max-width:600px;
+}
+
+.fade{
+    animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="gift">🫰🏻</div>
+
+<div id="message" class="fade">
+    <h1>buat gasiwa gu ter cantik</h1>
+
+    <p>
+        Haiii ✨<br><br>
+
+        selamat ulang tahun ya,panjang umur sehat selalu,
+	dan semoga apa yang di cita-citakan dapat segera tewujud
+        Jangan lupa tersenyum yaa 😊
+    </p>
+
+    <h2>🎂🎂🎂</h2>
+</div>
+
+<script>
+const gift = document.getElementById("gift");
+const message = document.getElementById("message");
+
+gift.addEventListener("click", () => {
+    gift.style.display = "none";
+    message.style.display = "block";
+});
+</script>
+
+</body>
+</html>sss
