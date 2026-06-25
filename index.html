@@ -3,90 +3,241 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kado Untuk Kamu ❤️</title>
+
+<title>Buat Pacarku Tercinta ❤️</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
 body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-    font-family:Arial,sans-serif;
-    overflow:hidden;
+height:100vh;
+background:linear-gradient(135deg,#ff5f9e,#ff8fb1);
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
 }
 
-#gift{
-    font-size:120px;
-    cursor:pointer;
-    transition:0.5s;
+.gift{
+font-size:120px;
+cursor:pointer;
+animation:float 1.5s infinite;
 }
 
-#gift:hover{
-    transform:scale(1.1);
+@keyframes float{
+50%{
+transform:translateY(-20px);
+}
 }
 
-#message{
-    display:none;
-    text-align:center;
-    color:white;
-    padding:20px;
+.page{
+display:none;
+padding:20px;
+max-width:700px;
+animation:fade 1.5s;
 }
 
-h1{
-    font-size:40px;
+@keyframes fade{
+from{
+opacity:0;
+transform:scale(.9);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
 }
 
-p{
-    font-size:20px;
-    max-width:600px;
+.envelope{
+font-size:90px;
+cursor:pointer;
+margin-bottom:20px;
 }
 
-.fade{
-    animation:fadeIn 1.5s ease;
+.message{
+display:none;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.slider{
+width:250px;
+height:250px;
+margin:auto;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 0 20px white;
+margin-bottom:20px;
 }
+
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.countdown{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+from{
+transform:translateY(-100px);
+opacity:1;
+}
+to{
+transform:translateY(100vh);
+opacity:0;
+}
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+margin-top:20px;
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="gift">🫰🏻</div>
-
-<div id="message" class="fade">
-    <h1>buat gasiwa gu ter cantik</h1>
-
-    <p>
-        Haiii ✨<br><br>
-
-        selamat ulang tahun ya,panjang umur sehat selalu,
-	dan semoga apa yang di cita-citakan dapat segera tewujud
-        Jangan lupa tersenyum yaa 😊
-    </p>
-
-    <h2>🎂🎂🎂</h2>
+<div id="gift" class="gift">
+🎁
 </div>
 
-<script>
-const gift = document.getElementById("gift");
-const message = document.getElementById("message");
+<div id="page" class="page">
 
-gift.addEventListener("click", () => {
-    gift.style.display = "none";
-    message.style.display = "block";
-});
+<div id="envelope" class="envelope">
+💌
+</div>
+
+<div id="message" class="message">
+
+<div class="slider">
+<img id="photo"
+src="https://picsum.photos/400">
+</div>
+
+<h1>Untuk Kamu ❤️</h1>
+
+<p>
+
+Happy Birthday, Livia Anin Dila ❤️🎂
+
+Hari ini adalah hari spesial karena seseorang yang sangat berarti dalam hidupku bertambah usia.
+
+Aku bersyukur bisa mengenal kamu, bisa tertawa bersama kamu, dan bisa memiliki banyak kenangan indah bersama kamu.
+
+Terima kasih karena selalu hadir, selalu mendukung, dan selalu menjadi alasan kenapa banyak hariku terasa lebih menyenangkan.
+
+Di umur yang baru ini, aku berharap semua hal baik datang menghampiri kamu. Semoga kamu selalu sehat, selalu bahagia, dimudahkan dalam setiap urusan, dan semua impian yang kamu perjuangkan bisa terwujud satu per satu.
+
+Jangan pernah meragukan dirimu sendiri yaa, karena kamu jauh lebih hebat daripada yang kamu kira.
+
+Aku mungkin tidak selalu sempurna, tapi satu hal yang pasti, aku akan selalu mendoakan yang terbaik untuk kamu.
+
+Terima kasih sudah menjadi bagian dari hidupku. Semoga hari ulang tahunmu kali ini menjadi salah satu hari yang paling berkesan dan penuh kebahagiaan.
+
+Selamat ulang tahun, sayangku ❤️✨
+
+Aku sayang kamu hari ini, besok, dan seterusnya. 💖
+
+</p>
+<div class="countdown" id="countdown"></div>
+
+<button onclick="alert('Aku bersyukur mengenal kamu ❤️')">
+Klik Aku 💕
+</button>
+
+</div>
+
+</div>
+
+<audio autoplay loop>
+<source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const gift=document.getElementById("gift");
+const page=document.getElementById("page");
+const envelope=document.getElementById("envelope");
+const message=document.getElementById("message");
+
+gift.onclick=()=>{
+gift.style.display="none";
+page.style.display="block";
+};
+
+envelope.onclick=()=>{
+envelope.style.display="none";
+message.style.display="block";
+};
+
+const photos=[
+"foto1.jpg",
+"foto2.jpg",
+"foto3.jpg",
+"foto4.jpg"
+];
+let i=0;
+
+setInterval(()=>{
+i=(i+1)%photos.length;
+document.getElementById("photo").src=photos[i];
+},2500);
+
+const target=new Date("2026-07-10");
+
+setInterval(()=>{
+
+const now=new Date();
+
+const diff=now-target;
+
+const days=Math.floor(diff/(1000*60*60*24));
+
+document.getElementById("countdown").innerHTML=
+"🎂 Menuju ulang tahun Dila: " + Math.abs(days) + " hari";},1000);
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=
+(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+},250);
+
 </script>
 
 </body>
-</html>sss
+</html>
